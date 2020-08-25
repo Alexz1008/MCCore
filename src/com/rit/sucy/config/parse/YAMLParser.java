@@ -223,15 +223,7 @@ public class YAMLParser
 
                     stringList.add(str);
                 }
-                if (key.equalsIgnoreCase("icon-lore")) {
-                	for (String lore : stringList) {
-                		lore.replaceAll("attr:&e", "attr:").replaceAll("attr:&f", "attr:");
-                	}
-                	data.set(key, stringList);
-                }
-                else {
-                	data.set(key, stringList);
-                }
+            	data.set(key, stringList);
                 i--;
             }
 
