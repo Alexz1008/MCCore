@@ -62,7 +62,7 @@ public class MapData extends MapRenderer
         this.root = root;
         this.view = view;
         this.buffer = new MapBuffer(view);
-        this.map = new ItemStack(Material.MAP, 1, view.getId());
+        this.map = new ItemStack(Material.MAP, 1);
 
         for (MapRenderer r : view.getRenderers())
         {

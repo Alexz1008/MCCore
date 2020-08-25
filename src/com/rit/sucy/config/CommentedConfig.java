@@ -31,6 +31,7 @@ import com.rit.sucy.config.parse.YAMLParser;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.logging.Level;
 
 /**
@@ -140,6 +141,16 @@ public class CommentedConfig
         {
             try
             {
+            	if (data.keys().size() == 1) {
+            		DataSection sec = data.getSection(data.keys().get(0));
+                    if (sec.has("icon-lore")) {
+                    	ArrayList<String> list = (ArrayList<String>) sec.getList("icon-lore");
+                    	for (int i = 0; i < list.size(); i++) {
+                    		list.set(i, list.get(i).replaceAll("attr:&e", "attr:").replaceAll("attr:&f", "attr:"));
+                    	}
+                    	sec.set("icon-lore", list);
+                    }
+            	}
                 data.dump(configFile);
             }
             catch (Exception ex)

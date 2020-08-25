@@ -98,7 +98,7 @@ public class MapMenuManager
         // Add the data
         MapData mapData = new MapData(root, view);
         data.put(key, mapData);
-        idMap.put(view.getId(), mapData);
+        idMap.put((short) view.getId(), mapData);
     }
 
     /**

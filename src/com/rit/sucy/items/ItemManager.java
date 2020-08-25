@@ -149,11 +149,6 @@ public class ItemManager
                     put((short) 4, "Acacia Wood Planks");
                     put((short) 5, "Dark Oak Wood Planks");
                 }});
-            put(Material.LOG_2.name(), new HashMap<Short, String>()
-            {{
-                    put((short) 0, "Acacia Wood");
-                    put((short) 1, "Dark Oak Wood");
-                }});
             put("SAPLING", new HashMap<Short, String>()
             {{
                     put((short) 0, "Oak Sapling");

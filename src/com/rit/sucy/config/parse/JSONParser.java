@@ -26,7 +26,6 @@
  */
 package com.rit.sucy.config.parse;
 
-import com.sun.xml.internal.fastinfoset.Encoder;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -297,7 +296,7 @@ public class JSONParser
         try
         {
             FileOutputStream out = new FileOutputStream(file);
-            BufferedWriter write = new BufferedWriter(new OutputStreamWriter(out, Encoder.UTF_8));
+            BufferedWriter write = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
 
             save(data, write);
 

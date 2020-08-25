@@ -26,7 +26,6 @@
  */
 package com.rit.sucy.config.parse;
 
-import com.sun.xml.internal.fastinfoset.Encoder;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
@@ -224,7 +223,15 @@ public class YAMLParser
 
                     stringList.add(str);
                 }
-                data.set(key, stringList);
+                if (key.equalsIgnoreCase("icon-lore")) {
+                	for (String lore : stringList) {
+                		lore.replaceAll("attr:&e", "attr:").replaceAll("attr:&f", "attr:");
+                	}
+                	data.set(key, stringList);
+                }
+                else {
+                	data.set(key, stringList);
+                }
                 i--;
             }
 
@@ -295,7 +302,7 @@ public class YAMLParser
         try
         {
             FileOutputStream out = new FileOutputStream(file);
-            BufferedWriter write = new BufferedWriter(new OutputStreamWriter(out, Encoder.UTF_8));
+            BufferedWriter write = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
 
             save(data, write);
 

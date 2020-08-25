@@ -144,4 +144,10 @@ public class CommandLog implements CommandSender
     {
 
     }
+
+	@Override
+	public Spigot spigot() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
